@@ -3,20 +3,23 @@ package hello.advanced.app.v1;
 import hello.advanced.trace.TraceStatus;
 import hello.advanced.trace.hellotrace.HelloTraceV1;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
-@Service
-public class OrderServiceV1 {
-    private final OrderRepositoryV1 orderRepository;
+@RestController
+public class OrderControllerV1 {
+    private final OrderServiceV1 orderService;
     private final HelloTraceV1 trace;
 
-    public void orderItem(String itemId) {
+    @GetMapping("/v1/request")
+    public String request(String itemId) {
         TraceStatus status = null;
         try {
-            status = trace.begin("OrderServiceV1.orderItem()");
-            orderRepository.save(itemId);
+            status = trace.begin("OrderController.request()");
+            orderService.orderItem(itemId);
             trace.end(status);
+            return "ok";
         } catch (Exception e) {
             trace.exception(status, e);
             throw e; // 예외를 꼭 다시 던져줘야 한다.

@@ -1,2 +1,8 @@
 ### GET saveOrder
 GET http://localhost:8080/v0/request?itemId=hello
+
+### GET saveOrder 정상
+GET http://localhost:8080/v1/request?itemId=hello
+
+### GET saveOrder V1
+GET http://localhost:8080/v1/request?itemId=ex
