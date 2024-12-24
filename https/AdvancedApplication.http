@@ -1,8 +1,14 @@
-### GET saveOrder
-GET http://localhost:8080/v0/request?itemId=hello
+### GET saveOrder V0
+GET http://localhost:8081/v0/request?itemId=hello
 
-### GET saveOrder 정상
-GET http://localhost:8080/v1/request?itemId=hello
+### GET saveOrder V1 정상
+GET http://localhost:8081/v1/request?itemId=hello
 
-### GET saveOrder V1
-GET http://localhost:8080/v1/request?itemId=ex
+### GET saveOrder V1 예외
+GET http://localhost:8081/v1/request?itemId=ex
+
+### GET saveOrder V2 정상
+GET http://localhost:8081/v2/request?itemId=hello
+
+### GET saveOrder V2 예외
+GET http://localhost:8081/v2/request?itemId=ex
