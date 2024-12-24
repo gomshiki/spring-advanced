@@ -12,3 +12,9 @@ GET http://localhost:8081/v2/request?itemId=hello
 
 ### GET saveOrder V2 예외
 GET http://localhost:8081/v2/request?itemId=ex
+
+### GET saveOrder V3 정상
+GET http://localhost:8081/v3/request?itemId=hello
+
+### GET saveOrder V3 예외
+GET http://localhost:8081/v3/request?itemId=ex
